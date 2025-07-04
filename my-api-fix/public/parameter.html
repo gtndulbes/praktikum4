@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pemrograman Lanjut</title>
+        <link rel="stylesheet" href="/my-api-fix/public/satu.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+.dasboard-satu { /*body dashboard*/
+    background-image: url(back.jpg); /*background image*/
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%; /*ukuran vertikal*/
+    height: 100vh; /* ukuran vertikal*/
+    margin: 0;
+    overflow-x:hidden;
+    position:static;
+}
+
+.dashboard-dua{ /*logo, teknik elektro, navigasi*/
+    background-color: transparan;
+    width: 100%;
+    height: 75px;;
+    display: flex;
+}
+
+.dashboard-tiga { /*logo unwiku*/
+    background-color: transparan;
+    margin-top: 0.5%;
+    margin-left: 1%;
+    width: 60px;
+    height:60px;
+}
+
+.dashboard-empat { /*teknik elektro*/
+    background-color:transparan;
+    width: 25%;
+    color:white;
+    font-size: 2rem;
+    margin: 0.5%;
+    text-decoration: none; /*dekorasi teks*/
+    display: flex; /*colom/baris*/
+    justify-content: center;
+    align-items: center; /*vertikal center*/
+    font-weight: bold; /*biar terbal*/
+    font-family: 'Poppins' , sans-serif; /*styl font*/
+}
+
+.dashboard-lima {
+    background-color:transparan;
+    display: flex;
+    width: 50%; /*panjang vertikal*/
+    height: 60px; /*panjang kesamping*/
+    margin: 0.5% 1% 0.5% 25%; /*jarak pinggiran*/
+    justify-content: right;
+}
+.dashboard-enam {
+    background-color:transparan; /*warna background*/
+    font-size: 1.5rem; /*ukuran huruf*/
+    list-style-type: none; /*Properti `list-style-type` digunakan untuk menentukan bentuk penanda pada elemen daftar, seperti `disc` (bulat), `circle` (lingkaran kosong), `square` (kotak) untuk daftar tak berurutan (`<ul>`), dan `decimal` (angka), `lower-alpha` (huruf kecil), `upper-roman` (angka Romawi besar) untuk daftar berurutan (`<ol>`).*/
+    margin: 0.5% 12% 0.5% 0%;/*margin menghilangkan margin default agar elemen menempel ke tepi layar tanpa ruang kosong.*/
+}
+.dashboard-tujuh {
+    color:white;
+    display: flex;
+    justify-content: center; /*horizontal center*/
+    align-items: center; /*vertikal center*/
+    font-weight: bold; /*biar terbal*/
+    font-family:'Inter', sans-serif; /*gaya huruf*/
+    font-size: 1rem; /*ukuran huruf*/
+    text-decoration: none;
+    margin-top:15px;
+}
+
+.sensor-satu { /*main sensor*/
+    padding: 20px;
+    display: flex;
+    gap:20px;
+    flex-wrap:nowrap;
+}
+
+.sensor-dua {
+    background-color: rgba(255, 255, 255, 0.315);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px white;
+    padding: 20px;
+    width: 100%;
+    justify-items: center;
+    
+}
+
+.sensor-dua h2 {
+    margin: 0 0 10px;
+    color:white;
+    align-items: center;
+}
+.sensor-dua p {
+    color: white;
+    align-items: center;
+}
+
+.sensor-tiga {
+    background-color: rgba(255, 255, 255, 0.315);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px white;
+    padding: 20px;
+    margin: 20px 0px 40px 20px;
+    width: 94%;
+    justify-items: center;
+    
+}
+
+.sensor-tiga h2 {
+    margin: 0 0 10px;
+    color:white;
+    align-items: center;
+}
+.sensor-tiga p {
+    color: white;
+    align-items: center;
+}
+
+.icon {
+    width: 24px;
+    margin-right: 10px;
+}
+
+/* Kontrol Button */
+.control-buttons {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.btn-control {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #e73c3c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    flex:1;
+    min-width: 350px;
+    transition: background 0.3s;
+}
+.btn-control:hover {
+    background: #e73c3c77;
+}
+.btn-control.on {
+    background: #0c9e2c;
+}
+.btn-control.on:hover {
+    background: #0c9e2cab;
+}
+/* Log Aktivitas */
+.log {
+    background: transparent;
+    padding: 0px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    width:100%;
+    height:100px;
+}
+
+.log p {
+    margin-bottom: 5px;
+    margin-left: auto;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+}
+    </style>
+    <body class="dasboard-satu">
+        <!--Navigasi-->
+        <nav>
+            <div class="dashboard-dua">
+                <img class="dashboard-tiga" src="logo.png" alt="Logo unwiku"/>
+                <a class="dashboard-empat">TEKNIK ELEKTRO</a>
+            </div>
+        </nav>
+        <!--sensor-->
+        <main class="sensor-satu">
+            <div class ="sensor-dua">
+                <h2>Sensor Suhu</h2>
+                <p id="suhu">Memuat...</p>
+            </div>
+
+            <div class="sensor-dua">
+                <h2>Sensor pH</h2>
+                <p id="kecepatan">Memuat...</p>
+            </div>
+
+            <div class="sensor-dua">
+                <h2>Sensor Kelembaban</h2>
+                <p id="kelembaban">Memuat...</p>
+            </div>
+            <div class ="sensor-dua">
+                <h2>Sensor Suhu</h2>
+                <p id="suhu">Memuat...</p>
+            </div>
+
+            <div class="sensor-dua">
+                <h2>Sensor pH</h2>
+                <p id="kecepatan">Memuat...</p>
+            </div>
+
+            <div class="sensor-dua">
+                <h2>Sensor Kelembbbbaban</h2>
+                <p id="kelembaban">Memuat...</p>
+            </div>
+        </main>
+
+        <!-- Panel Kontrol -->
+        <main>
+			<div class="sensor-tiga">
+				<h2 >
+					<img src="logo.png" class="icon" /> Kontrol Perangkat
+				</h2>
+				<div class="control-buttons">
+					<button id="ac" class="btn-control" onclick="toggleac()">
+						A/C OFF
+					</button>
+					<button id="humidity" class="btn-control" onclick="togglehumidity()">
+						HUMIDIFIER OFF
+					</button>
+					<button id="pump" class="btn-control" onclick="togglePump()">
+						POMPA OFF
+					</button>
+				</div>
+			</div>
+        </main>
+			<!-- Log Aktivitas -->
+        <main>
+		<div class="sensor-tiga">
+				<h2>📝 Log Aktivitas</h2>
+				<div class="log" id="activity-log">
+					<p>Sistem siap...</p>
+				</div>
+			</div>
+        </main>
+
+  <script>
+    async function updateSensorData() {
+      try {
+        const res = await fetch('/api/sensor');
+        const data = await res.json();
+        document.getElementById('suhu').textContent = data.suhu ?? '-';
+        document.getElementById('kelembaban').textContent = data.kelembaban ?? '-';
+        document.getElementById('kecepatan').textContent = data.kecepatan ?? '-';
+      } catch (err) {
+        console.error('Gagal mengambil data:', err);
+      }
+    }
+
+    setInterval(updateSensorData, 2000);
+    updateSensorData();
+
+    // Kontrol Perangkat
+function toggleac () {
+    const btn = document.getElementById(`ac`);
+    const isOn = btn.textContent.includes('ON');
+
+    if (isOn) {
+    btn.textContent = `A/C OFF`;
+    btn.classList.remove('on');
+    addLog(`A/C dimatikan`);
+    } else {
+    btn.textContent = `A/C ON`;
+    btn.classList.add('on');
+    addLog(`A/C dinyalakan`);
+    }
+}
+
+function togglehumidity() {
+    const btn = document.getElementById(`humidity`);
+    const isOn = btn.textContent.includes('ON');
+
+    if (isOn) {
+    btn.textContent = `HUMIDIFIER OFF`;
+    btn.classList.remove('on');
+    addLog(`Humidifier dimatikan`);
+    } else {
+    btn.textContent = `HUMIDIFIER ON`;
+    btn.classList.add('on');
+    addLog(`Humidifier dinyalakan`);
+    }
+}
+function togglePump() {
+    const btn = document.getElementById('pump');
+    const isOn = btn.textContent.includes('ON');
+
+    if (isOn) {
+    btn.textContent = 'POMPA OFF';
+    btn.classList.remove('on');
+    addLog('Pompa dimatikan');
+    } else {
+    btn.textContent = 'POMPA ON';
+    btn.classList.add('on');
+    addLog('Pompa dinyalakan');
+    }
+}
+
+// Log Aktivitas
+function addLog(message) {
+    const logElement = document.getElementById('activity-log');
+    const timestamp = new Date().toLocaleTimeString();
+    logElement.innerHTML = `<p>[${timestamp}] ${message}</p>` + logElement.innerHTML;
+}
+
+// Inisialisasi
+// Panggil fungsi ini jika ingin memuat sensor data awal
+// updateSensorData(); // pastikan fungsi ini didefinisikan jika digunakan
+addLog('Sistem IoT berjalan!');
+  </script>
+</body>
+</html>
