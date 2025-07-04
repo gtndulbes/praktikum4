@@ -1,0 +1,293 @@
+header {
+    background-color:  transparent;
+    color :white;
+    padding:2px;
+    justify-items: center;
+}
+
+.konten-konten {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: transparent;
+    color: #fff;
+    height: 372px;
+    }
+
+.konten-kolom {
+    flex: 1 1 200px;
+    margin: 15px;
+}
+
+.konten-kolom h4 {
+    margin-bottom: 10px;
+    color: #00ffff;
+}
+
+.konten-kolom p {
+    line-height: 1.6;
+}
+
+.icon {
+    width: 100%px;
+    height: 100%px;
+    transition: transform 0.2s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.sosial-ikon a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-satu {
+    background-color: #0f496b;
+    color: white;
+    padding: 0.02px;
+}
+
+.footer-satu p {
+    text-align:center;
+}
+.login-satu { /*body login*/
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(/image/back.jpg); /*background-image menetapkan gambar latar dengan url('gambar.jpg'), yang bisa diganti sesuai path gambar yang diinginkan.*/
+    background-size: cover; /*background-size mengatur ukuran gambar, seperti 'cover' agar menutupi seluruh elemen, 'contain' agar seluruh gambar terlihat, atau '100% 100%' untuk memaksa sesuai ukuran elemen.*/
+    background-repeat: no-repeat;/*background-repeat menentukan apakah gambar diulang, misalnya 'no-repeat' untuk tidak diulang, 'repeat' untuk mengulang penuh, 'repeat-x' horizontal, dan 'repeat-y' vertikal.*/
+    background-position: center;/*background-position mengatur posisi gambar, seperti center di tengah, top, bottom, left, right, atau kombinasi dan persentase seperti 50% 50%*/
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-dua { /*atasan*/
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.login-dua h2 { /*teknik elektro*/
+    margin-bottom: 20px;
+    color: #092857;
+    font-weight: bold;
+
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 91%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc; /*garis pinggir*/
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.login-tiga {
+    width: 100%;
+    padding: 12px;
+    margin-top:8px;
+    background-color: #1e3c72;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.login-tiga:hover {
+    background-color: #1e3b728e;
+}
+
+.login-empat { /*ketika error*/
+    color: rgba(255, 0, 0, 0.616);
+    margin-top: 10px;
+}
+
+.dasboard-satu { /*body dashboard*/
+    background-image: url(back.jpg); /*background image*/
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%; /*ukuran vertikal*/
+    height: 100vh; /* ukuran vertikal*/
+    margin: 0;
+    overflow-x:hidden;
+    position:static;
+}
+
+.dashboard-dua{ /*logo, teknik elektro, navigasi*/
+    background-color: transparan;
+    width: 100%;
+    height: 75px;;
+    display: flex;
+}
+
+.dashboard-tiga { /*logo unwiku*/
+    background-color: transparan;
+    margin-top: 0.5%;
+    margin-left: 1%;
+    width: 60px;
+    height:60px;
+}
+
+.dashboard-empat { /*teknik elektro*/
+    background-color:transparan;
+    width: 25%;
+    color:white;
+    font-size: 2rem;
+    margin: 0.5%;
+    text-decoration: none; /*dekorasi teks*/
+    display: flex; /*colom/baris*/
+    justify-content: center;
+    align-items: center; /*vertikal center*/
+    font-weight: bold; /*biar terbal*/
+    font-family: 'Poppins' , sans-serif; /*styl font*/
+}
+
+.dashboard-lima {
+    background-color:transparan;
+    display: flex;
+    width: 50%; /*panjang vertikal*/
+    height: 50px; /*panjang kesamping*/
+    margin: 0.5% 1% 0.5% 25%; /*jarak pinggiran*/
+    justify-content: right;
+}
+.dashboard-enam {
+    background-color:transparan; /*warna background*/
+    font-size: 1.5rem; /*ukuran huruf*/
+    list-style-type: none; /*Properti `list-style-type` digunakan untuk menentukan bentuk penanda pada elemen daftar, seperti `disc` (bulat), `circle` (lingkaran kosong), `square` (kotak) untuk daftar tak berurutan (`<ul>`), dan `decimal` (angka), `lower-alpha` (huruf kecil), `upper-roman` (angka Romawi besar) untuk daftar berurutan (`<ol>`).*/
+    margin: 0.5% 12% 0.5% 0%;/*margin menghilangkan margin default agar elemen menempel ke tepi layar tanpa ruang kosong.*/
+}
+.dashboard-tujuh {
+    color:white;
+    display: flex;
+    justify-content: center; /*horizontal center*/
+    align-items: center; /*vertikal center*/
+    font-weight: bold; /*biar terbal*/
+    font-family:'Inter', sans-serif; /*gaya huruf*/
+    font-size: 1rem; /*ukuran huruf*/
+    text-decoration: none;
+    margin-top:15px;
+}
+
+.sensor-satu { /*main sensor*/
+    padding: 20px;
+    display: flex;
+    gap:20px;
+    flex-wrap:nowrap;
+}
+
+.sensor-dua {
+    background-color: rgba(255, 255, 255, 0.315);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px white;
+    padding: 20px;
+    width: 100%;
+    justify-items: center;
+    
+}
+
+.sensor-dua h2 {
+    margin: 0 0 10px;
+    color:white;
+    align-items: center;
+}
+.sensor-dua p {
+    color: white;
+    align-items: center;
+}
+
+.sensor-tiga {
+    background-color: rgba(255, 255, 255, 0.315);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px white;
+    padding: 20px;
+    margin: 20px 0px 40px 20px;
+    width: 94%;
+    justify-items: center;
+    
+}
+
+.sensor-tiga h2 {
+    margin: 0 0 10px;
+    color:white;
+    align-items: center;
+}
+.sensor-tiga p {
+    color: white;
+    align-items: center;
+}
+
+.icon {
+    width: 24px;
+    margin-right: 10px;
+}
+
+/* Kontrol Button */
+.control-buttons {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.btn-control {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #e73c3c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    flex:1;
+    min-width: 350px;
+    transition: background 0.3s;
+}
+.btn-control:hover {
+    background: #e73c3c77;
+}
+.btn-control.on {
+    background: #0c9e2c;
+}
+.btn-control.on:hover {
+    background: #0c9e2cab;
+}
+/* Log Aktivitas */
+.log {
+    background: transparent;
+    padding: 0px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    width:100%;
+    height:100px;
+}
+
+.log p {
+    margin-bottom: 5px;
+    margin-left: auto;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.about-satu {
+    color : white;
+    justify-items: center;
+}
