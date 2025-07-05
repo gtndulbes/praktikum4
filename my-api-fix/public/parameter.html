@@ -1,4 +1,3 @@
-<anonymous_script></anonymous_script>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -322,7 +321,11 @@ function addLog(message) {
 // Panggil fungsi ini jika ingin memuat sensor data awal
 // updateSensorData(); // pastikan fungsi ini didefinisikan jika digunakan
 addLog('Sistem IoT berjalan!');
-
+    <anonymous_script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const apikey = urlParams.get('apikey');
+        const apiURL = `/api/sensor?apikey=${apikey}`;
+    </anonymous_script>
 </script>
 </body>
 </html>
