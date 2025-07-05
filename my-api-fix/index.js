@@ -2,25 +2,28 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const fs = require('fs');
-
 const validKeys = JSON.parse(fs.readFileSync('apikeys.json')).keys;
+const path = require('path');
+const apiKeyData = JSON.parse(fs.readFileSync('apikeys.json', 'utf-8'));
+const validApiKey = apiKeyData.apikey;
 
+// Serve file statis dari folder "public"
 app.use((req, res, next) => {
-    const apiKey = req.query.apiKey || req.headers['x-api-key'];
-    if (!validKeys.includes(apiKey)) {
-        return res.status(401).json({ message: 'Unauthorized: Invalid API key' });
-    }
-    next();
+  const userApiKey = req.query.apikey;
+  const isApiRequest = req.path.startsWith('/api');
+
+  if (isApiRequest || req.path === '/favicon.ico') {
+    return next(); // Boleh lanjut untuk endpoint API
+  }
+
+  if (userApiKey !== validApiKey) {
+    return res.status(403).send('<h1>403 Forbidden</h1><p>API Key salah atau tidak ada.</p>');
+  }
+
+  next();
 });
 
-app.get('/api/data', (req, res) => {
-    res.json({ data: 'Ini data rahasia hanya untuk pemilik API key' });
-});
-
-app.listen(3000, () => console.log('Server running on port 3000'));
-
-app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 let sensorData = {
   suhuudara: null,
