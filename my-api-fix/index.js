@@ -6,9 +6,12 @@ app.use(express.json());
 app.use(express.static('public'));
 
 let sensorData = {
-  suhu: null,
-  kelembaban: null,
-  kecepatan: null
+  suhuudara: null,
+  kelembabanudara: null,
+  kelembabantanah: null,
+  phtanah: null,
+  intensitascahaya: null,
+  level: null
 };
 
 app.get('/cek', (req, res) => {
@@ -16,8 +19,8 @@ app.get('/cek', (req, res) => {
 });
 
 app.post('/api/sensor', (req, res) => {
-  const { suhu, kelembaban, kecepatan } = req.body;
-  sensorData = { suhu, kelembaban, kecepatan };
+  const { suhuudara, kelembabanudara, kelembabantanah, phtanah, intensitascahaya, level} = req.body;
+  sensorData = { suhuudara, kelembabanudara, kelembabantanah, phtanah, intensitascahaya, level };
   console.log("Data sensor diterima:", sensorData);
   res.json({ status: 'Data diterima' });
 });
