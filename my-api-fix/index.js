@@ -57,3 +57,7 @@ app.listen(port, () => {
 fetch('http://localhost:3000/api/data?apiKey=12345')
   .then(res => res.json())
   .then(data => console.log(data));
+
+const urlParams = new URLSearchParams(window.location.search);
+const apikey = urlParams.get('apikey');
+const apiURL = `/api/sensor?apikey=${apikey}`;
