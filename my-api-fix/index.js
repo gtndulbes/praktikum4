@@ -54,7 +54,3 @@ app.listen(port, () => {
   console.log(`✅ Server berjalan di http://localhost:${port}`);
 });
 
-fetch('http://localhost:3000/api/data?apiKey=12345')
-  .then(res => res.json())
-  .then(data => console.log(data));
-
