@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const fs = require('fs');
 
-const validKeys = JSON.parse(fs.readFileSync('/apikeys.json')).keys;
+const validKeys = JSON.parse(fs.readFileSync('apikeys.json')).keys;
 
 app.use((req, res, next) => {
     const apiKey = req.query.apiKey || req.headers['x-api-key'];
