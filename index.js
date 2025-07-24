@@ -13,7 +13,7 @@ const apiKeyData = JSON.parse(fs.readFileSync('apikeys.json', 'utf-8'));
 const validApiKey = apiKeyData.apikey;
 
 // Serve file statis dari folder public/
-app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
 
 // Middleware untuk akses halaman HTML dengan API key
 app.get('/', (req, res) => {
