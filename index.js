@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   if (userApiKey !== validApiKey) {
     return res.status(403).send('<h1>403 Forbidden</h1><p>API Key salah atau tidak ada.</p>');
   }
-  res.sendFile(path.join(__dirname, 'frontend', 'parameter.html'));
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'parameter.html'));
 });
 
 // Serve file statis dari folder public/
