@@ -12,13 +12,16 @@ app.use(express.json()); // <= penting agar bisa menerima POST JSON
 const apiKeyData = JSON.parse(fs.readFileSync('apikeys.json', 'utf-8'));
 const validApiKey = apiKeyData.apikey;
 
+// Serve file statis dari folder public/
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
+
 // Middleware untuk akses halaman HTML dengan API key
 app.get('/', (req, res) => {
   const userApiKey = req.query.apiKey;
   if (userApiKey !== validApiKey) {
     return res.status(403).send('<h1>403 Forbidden</h1><p>API Key salah atau tidak ada.</p>');
   }
-  res.sendFile(path.join(__dirname, 'frontend', 'parameter.html'));
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
 });
 
 // Serve file statis dari folder public/
